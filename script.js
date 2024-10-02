@@ -116,7 +116,10 @@ function createGrid(gridsize){
                     darkenOpacity+=0.1;
                     darkenCount++;
                 }
-                else row.style.backgroundColor=selectedColor;
+                else {
+                    row.style.backgroundColor=selectedColor;
+                    row.style.opacity=1;
+                }
             }
         })
     }
