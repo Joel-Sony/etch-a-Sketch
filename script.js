@@ -9,7 +9,8 @@ let selectedColor="#000000";
 let darkenOpacity=0.1;
 let darkenCount=0;
 let darkenModeFlag=0;
-
+let gridwidth=700;
+let width=Math.floor(gridwidth/gridsize);
 
 let eraser =document.querySelector("#eraser");
 eraser.addEventListener("click",()=>{
@@ -61,7 +62,20 @@ darken.addEventListener("click",()=>{
     darkenCount=0;
 })
 
-for(let j=1;j<=gridsize;j++){
+let gridButton = document.querySelector("#grid");
+gridButton.addEventListener("click",()=>{
+    gridsize = prompt("Enter new Gridsize: ");
+    while(gridsize>=100){
+        gridsize = prompt("Please enter a gridsize<100: ");
+    }
+    width=Math.floor(gridwidth/gridsize);
+    createGrid(gridsize);
+    count=1;
+})
+
+function createGrid(gridsize){
+    grid.innerHTML="";
+    for(let j=1;j<=gridsize;j++){
     let newRow = document.createElement("div");
     newRow.classList.add(`row_${j}`);
     newRow.style.cssText="display:flex;";
@@ -74,8 +88,9 @@ for(let j=1;j<=gridsize;j++){
         rowSelector.lastChild.id=`box_${count}`
         count++;
         rowSelector.lastChild.style.cssText = `
-        width: 30px; 
-        height: 30px; 
+        width: ${width}px; 
+        height: ${width}px; 
+        border:solid 1px black;
         `   
         let random_color = colors[Math.floor(Math.random() * colors.length)];
         rowSelector.lastChild.addEventListener("mouseover",(e)=>{
@@ -102,6 +117,7 @@ for(let j=1;j<=gridsize;j++){
             }
         })
     }
+    }
 }
 
-grid.style.cssText = "width:auto; height: auto;";
+createGrid(gridsize);
