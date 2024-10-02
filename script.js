@@ -97,12 +97,15 @@ function createGrid(gridsize){
             let row = document.querySelector(`#${e.target.id}`)
             if(rainbowModeFlag==1){
                 row.style.backgroundColor= random_color;
+                row.style.opacity=1;
             }
             else if(colorModeFlag==1){
                 row.style.backgroundColor= selectedColor;
+                row.style.opacity=1;
             }
             else if(eraserModeFlag==1){
                 row.style.backgroundColor= "#ffffff";
+                row.style.opacity=1;
             }
             else if(darkenModeFlag==1){
                 console.log("inside darkenflag");
