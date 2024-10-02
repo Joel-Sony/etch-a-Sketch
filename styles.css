@@ -28,6 +28,7 @@ body {
 }
 
 .container{
+    margin-top:40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,9 +49,31 @@ body{
     background-color:#9ea1ff;
 }
 
-ul {
+ul{
+    width:auto;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    margin-left: 40px;
+    font-size: 20px;
+    margin-bottom:40px;
+    background-color: white;
+    padding:40px 10px;
 }
   
+button {
+    border: solid 2px black; 
+    font-size:20px; 
+    cursor:pointer;
+    padding:20px;
+    border-radius:10px;
+
+}
+
+.options{
+    background-color:#9ea1ff;
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    align-items: center;
+}
+

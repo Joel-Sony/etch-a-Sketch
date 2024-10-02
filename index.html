@@ -16,11 +16,15 @@
 
     <main class="container">
         <div class="paintBoxes"></div>
-        <ul>
-            <li><button id="clear">Reset</button></li>
-            <li><label for="favcolor">Select your favorite color:</label>
-                <input type="color" id="favcolor" name="favcolor" value="#ff0000">
-            </li>
+        <ul class="options">
+            <li style="text-align: center;font-size:30px;font-weight:500;"><u>Tools</u></li>
+            <li><button id="colorButton">Colour Mode</button>
+                <label for="favcolor">Colour Picker -></label>
+                <input style="margin-top:1px;"type="color" id="favcolor" name="favcolor" value="#000000"></li>
+            <li><button id="rainbow">Rainbow Mode</button></li>
+            <li><button id="darken">Progressively Darken</button></li>
+            <li><button id="eraser">Eraser</button></li>
+            <li><button id="clear">Clear</button></li>
         </ul>
     </main>
     
